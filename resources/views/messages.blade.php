@@ -13,7 +13,10 @@
     
     <form action="/create" method="post">
         <input type="text" name="title" placeholder="Title">
+        <input type="text" name="author" placeholder="Author">
         <input type="text" name="content" placeholder="Content">
+        <br>
+        
         <!-- this blade directive is necessary for all form posts somewhere in between
             the form tags -->
         @csrf
@@ -34,7 +37,9 @@
                         and will point to /messages/1 for the first message -->
                     <a href="/message/{{$message->id}}">{{$message->title}}:</a>
                 </b><br>
+                {{$message->author}}<br>
                 {{$message->content}}<br>
+                
                 {{$message->created_at->diffForHumans()}}           
             </li>
         @endforeach

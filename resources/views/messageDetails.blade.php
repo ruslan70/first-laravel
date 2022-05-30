@@ -9,9 +9,11 @@ ts value for section title to "Mini Twitter" (section content is used in message
 @section('content')
  
 <h2>Message Details:</h2>
-
+<p>{{$message->author}}</p>
 <h3>{{$message->title}}</h3>
+
 <p>{{$message->content}}</p>
+
 <form action="/message/{{$message->id}}" method="post">
    @csrf
    @method('delete')
