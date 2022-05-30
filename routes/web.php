@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessagesController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +29,8 @@ use App\Http\Controllers\MessagesController;
 // });
 
 Route::get('/messages', [MessagesController::class, 'showAll']);
+Route::post('/create', [MessagesController::class, 'create']);
+Route::get('/message/{id}', [MessagesController::class, 'details']);
+Route::delete('/message/{id}', [MessagesController::class, 'delete']);
+
 
