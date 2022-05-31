@@ -1,0 +1,41 @@
+.create-form {
+    text-align: center;
+    color: blue;
+}
+
+.save {
+    color: chartreuse;
+
+}
+
+.form-horizontal {
+    text-align: center;
+    color: rgb(225, 12, 37);
+}
+
+.fixed-bottom {
+    color: brown;
+    font-size: 1 vw;
+    
+}
+
+p {
+    color: darkgreen;
+}
+
+.entry-list {
+    list-style-type: none;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font: medium;
+    background-color: rgb(125, 209, 219);
+    border: 0px;
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+  

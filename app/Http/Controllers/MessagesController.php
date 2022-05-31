@@ -78,6 +78,25 @@ class MessagesController extends Controller
         return redirect('/messages');        
     } 
  
+    public function save($id , Request $request) {
+ 
+        $message = Message::findOrFail($id);
+        $message->title = $request->title;
+        $message->author = $request->author;
+        $message->content = $request->content;
+        $message->save();
+        
+  
+         
+        return redirect('/messages');      
+    } 
+
+    // public function update(Request $request, Message $message)
+    // {
+       
+    //     $message->save();
+    //     return redirect('/messages'); 
+    // }
  
 }
 
