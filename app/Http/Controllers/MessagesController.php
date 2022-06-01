@@ -78,25 +78,34 @@ class MessagesController extends Controller
         return redirect('/messages');        
     } 
  
-    public function save($id , Request $request) {
+    public function update(Request $request, $id) {
  
-        $message = Message::findOrFail($id);
-        $message->title = $request->title;
-        $message->author = $request->author;
-        $message->content = $request->content;
-        $message->save();
-        
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'author' => 'required'
+        ]);
   
-         
-        return redirect('/messages');      
-    } 
+        $data = Message::findOrFail($id);
+        $data->title = $request->title;
+        $data->content = $request->content;
+        $data->author = $request->author;
+        $data->save();
+  
+        return redirect('/messages');
+   }
 
-    // public function update(Request $request, Message $message)
-    // {
-       
-    //     $message->save();
-    //     return redirect('/messages'); 
-    // }
- 
+    public function deleteContent (Request $request) {
+
+        $message = Message::find($request ->id);
+        $message->content = "";
+        $message->title = "";
+        $message->author = "";
+
+        $message->save();
+
+        return redirect('/messages'); 
+    }
+
 }
 
