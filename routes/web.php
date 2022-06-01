@@ -32,6 +32,7 @@ Route::get('/messages', [MessagesController::class, 'showAll']);
 Route::post('/create', [MessagesController::class, 'create']);
 Route::get('/message/{id}', [MessagesController::class, 'details']);
 Route::delete('/message/{id}', [MessagesController::class, 'delete']);
-Route::post('/message/{id}', [MessagesController::class, 'save']);
+Route::post('/update/{id}', [MessagesController::class, 'update']);
+Route::post('/message/{id}', [MessagesController::class, 'deleteContent']);
 
 

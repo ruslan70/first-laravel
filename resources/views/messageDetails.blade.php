@@ -21,18 +21,22 @@ ts value for section title to "Mini Twitter" (section content is used in message
     </form>
 </div> 
 <div class="container p-5 my-5 border bg-secondary">
-    <form action="/message/{{$message->id}}"  method="POST" class="form-horizontal">
+    <form action="/update/{{$message->id}}"  method="POST" class="form-horizontal">
         {{ csrf_field() }}
     
                 <input type="hidden" name="id" class="form-id" value="{{$message->id}}">
-                <input type="text" name="title" class="form-title" onfocus="this.value=''" value="{{ $message->title }}">
-                <input type="text" name="author" class="form-author" onfocus="this.value=''" value="{{ $message->author }}">
-                <input type="text" name="content" class="form-content" onfocus="this.value=''" value="{{ $message->content }}"><br>
+                <input type="text" name="title" class="form-title"  value="{{ $message->title }}">
+                <input type="text" name="author" class="form-author"  value="{{ $message->author }}">
+                <input type="text" name="content" class="form-content"  value="{{ $message->content }}"><br>
                 
                 <br>
-                <button type="submit" class="btn btn-primary"><i class="save"></i>Save</button>
+                <button type="submit" class="btn btn-primary"><i class="save"></i>Update</button>
                                   
     </form>	
+    <form action="/message/{{ $message->id }}" method="post">
+                @csrf
+                <button type="submit">Delete Content</button>
+    </form>
 </div>							
 													
  
