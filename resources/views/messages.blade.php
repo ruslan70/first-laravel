@@ -21,7 +21,7 @@
         <!-- this blade directive is necessary for all form posts somewhere in between
             the form tags -->
         @csrf
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Create</button>
     </form>
    
   <h2>Recent messages:</h2>
@@ -47,6 +47,7 @@
             
                 <a href="/message/{{$message->id}}">Update from "{{$message->title}}":</a>
                 <span>{{ $message->updated_at->diffForHumans() }}</span>
+                <a href="/message/{{$message->id}}" class="btn btn-primary">To Edit</a>
             
 
             </li>

@@ -8,22 +8,22 @@
 ts value for section title to "Mini Twitter" (section content is used in messages.blade.php) -->
 @section('content')
 <div class="form-edit">
-<div class="container p-5 my-5 border bg-primary">
-    <h2>Message Details:</h2>
-    <h3>{{$message->title}}</h3>
-    <p>{{$message->author}}</p>
+    <div class="container p-5 my-5 border bg-primary">
+        <h2>Message Details:</h2>
+        <h3>{{$message->title}}</h3>
+        <p>{{$message->author}}</p>
 
-    <p>{{$message->content}}</p>
+        <p>{{$message->content}}</p>
 
-    <form action="/message/{{$message->id}}" method="post">
-    @csrf
-    @method('delete')
-    <button type="submit" class="btn btn-warning">Delete</button>
-    </form>
-</div> 
-<div class="container p-5 my-5 border bg-warning">
-    <form action="/update/{{$message->id}}"  method="POST" class="form-horizontal">
-        {{ csrf_field() }}
+        <form action="/message/{{$message->id}}" method="post">
+        @csrf
+        @method('delete')
+        <button type="submit" class="btn btn-warning">Delete</button>
+        </form>
+    </div> 
+    <div class="container p-5 my-5 border bg-warning">
+        <form action="/update/{{$message->id}}"  method="POST" class="form-horizontal">
+                {{ csrf_field() }}
     
                 <input type="hidden" name="id" class="form-id" value="{{$message->id}}">
                 <input type="text" name="title" class="form-title"  value="{{ $message->title }}">
@@ -33,13 +33,13 @@ ts value for section title to "Mini Twitter" (section content is used in message
                 <br>
                 <button type="submit" class="btn btn-primary"><i class="save"></i>Update</button><br>
                                   
-    </form>	
-    <br>
-    <form action="/message/{{ $message->id }}" method="post">
+        </form>	
+        <br>
+        <form action="/message/{{ $message->id }}" method="post">
                 @csrf
                 <button type="submit" class="btn btn-danger">Delete Content</button>
-    </form>
-</div>
+        </form>
+    </div>
 </div>							
 													
  

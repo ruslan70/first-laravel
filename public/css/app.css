@@ -11286,9 +11286,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
+body, html {
   font: 100% Helvetica, sans-serif;
   color: #000000;
+  /* The image used */
   background-image: url("/img/birds.jpg");
 }
 
@@ -11297,7 +11298,7 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font: medium;
   background-color: rgb(125, 209, 219);
-  opacity: 70%;
+  opacity: 90%;
   border: 0px;
   padding: 20px;
   margin-left: 50px;
@@ -11318,7 +11319,7 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font: medium;
   background-color: rgb(125, 209, 219);
-  opacity: 80%;
+  opacity: 90%;
   border: 0px;
   padding: 20px;
   margin-left: 80px;
@@ -11341,4 +11342,8 @@ h1, .h1 {
 
 .form-edit {
   opacity: 80%;
+}
+
+b {
+  color: green;
 }
