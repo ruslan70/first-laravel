@@ -21,7 +21,7 @@
         <!-- this blade directive is necessary for all form posts somewhere in between
             the form tags -->
         @csrf
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
    
   <h2>Recent messages:</h2>
@@ -41,21 +41,18 @@
                 {{$message->author}}<br>
                 {{$message->content}}<br>
                 
-                {{$message->created_at->diffForHumans()}}           
+                <span>Create: {{$message->created_at->diffForHumans()}}</span>
+                <br>  
+                
+            
+                <a href="/message/{{$message->id}}">Update from "{{$message->title}}":</a>
+                <span>{{ $message->updated_at->diffForHumans() }}</span>
+            
+
             </li>
         @endforeach
 
-    </ul>
-
-    <ul>
-        @foreach ($messages as $message)
-        <li>
-        
-            <a href="/message/{{$message->id}}">Update from "{{$message->title}}":</a>
-            <span>{{ $message->updated_at->diffForHumans() }}</span>
-        </li>
-        @endforeach
-    </ul>
+   
    
   @endsection
 
