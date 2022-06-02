@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    
-    <title>Document</title>
-</head>
-<body>
-    
 <!--extend layout master.blade.php -->
 @extends('layouts/master')
     
@@ -62,16 +50,15 @@
     <ul>
         @foreach ($messages as $message)
         <li>
-            ... ...
+        
+            <a href="/message/{{$message->id}}">Update from "{{$message->title}}":</a>
             <span>{{ $message->updated_at->diffForHumans() }}</span>
-            <a href="/message/{{$message->id}}">Edit</a>
         </li>
         @endforeach
     </ul>
    
   @endsection
-</body>
-</html>
+
 
 
  
