@@ -7,7 +7,7 @@
   <!--starts section content, defines some html for section content and end section content
   ts value for section title to "Mini Twitter" (section content is used in messages.blade.php) -->
   @section('content')
-
+  <!-- <img src="{{ asset('img/birds.jpg')}}"> -->
    
     <h2>Create new message: </h2>
     
@@ -28,7 +28,7 @@
     <ul>
         <!-- loops through the $messages, that this blade template
         gets from MessageController.php. for each element of the loop which
-        we call $message we print the properties (title, content
+        we call $message we print the properties title, content
         and created_at in an <li> element -->
 
         @foreach ($messages as $message) 
